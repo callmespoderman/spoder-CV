@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #080C14;
+    color: #F1F5F9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Cursor standards: ensure native pointer is always visible and crisp */
+a, button, [role="button"], .cursor-pointer, select, summary {
+  cursor: pointer;
+}
+
+input, textarea, [contenteditable="true"] {
+  cursor: text;
+}
+
+[disabled], .cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+/* Windows custom cyber scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B101E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2D4A;
+  border-radius: 4px;
+  border: 1px solid #283B60;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E23636;
+}
+
+/* Subtle tech web mesh background */
+.bg-tech-mesh {
+  background-color: #080C16;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(226, 54, 54, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 85% 30%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Font Family Custom Utilities */
+.resume-font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.resume-font-serif {
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", Times, serif !important;
+}
+
+.resume-font-mono {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, "Courier New", monospace !important;
+}
+
+.resume-font-garamond {
+  font-family: "EB Garamond", Garamond, "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+}
+
+.resume-font-grotesk {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* Holographic Laser & Scanner Animations */
+@keyframes laserSweep {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.animate-laser-sweep {
+  animation: laserSweep 2.4s ease-in-out infinite;
+}
+
+@keyframes radarSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-spin {
+  animation: radarSpin 4s linear infinite;
+}
+
+/* Print Optimization for Windows Export to PDF */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print, 
+  header, 
+  nav, 
+  footer, 
+  button, 
+  .windows-titlebar,
+  .windows-statusbar,
+  .tab-navigator,
+  .editor-sidebar,
+  .pdf-editor-ui,
+  .pdf-editor-overlay-handles,
+  .pdf-editor-selection-ring,
+  .pdf-inspector-panel,
+  .pdf-diff-ghost {
+    display: none !important;
+  }
+
+  #resume-document-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 850px !important;
+    background: #FFFFFF !important;
+    color: #111827 !important;
+    page-break-after: auto;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .pdf-annotation-item {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+  }
+
+  .pdf-annotation-item.is-whiteout {
+    background-color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .pdf-annotation-item input {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+
+  @page {
+    margin: 8mm 8mm 8mm 8mm;
+    size: auto;
+  }
+}

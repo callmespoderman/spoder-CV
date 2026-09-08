@@ -1,0 +1,6 @@
+{
+  "name": "SPODER RESUME",
+  "description": "An optimized tech-driven resume builder that analyzes questionnaire answers and uploaded documents to craft a high-impact professional CV.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
